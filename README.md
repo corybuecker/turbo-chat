@@ -9,5 +9,3 @@ Proof of concept, just for fun, to stream ChatGPT conversation chunks back to th
 ./bin/setup
 ./bin/dev
 ```
-
-![Demo](docs/demo-35717613665832.gif)
