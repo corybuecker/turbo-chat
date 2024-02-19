@@ -1,3 +1,5 @@
+# Turbo Chat
+
 Proof of concept, just for fun, to stream ChatGPT conversation chunks back to the client through Turbo Streams.
 
 1. Ensure that PostgreSQL and Redis are running.
