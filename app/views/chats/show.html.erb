@@ -5,7 +5,7 @@
   <p>There are
     <%= @chat.messages.count %>
     messages in this chat</p>
-  <div id="<%= dom_id(@chat) %>">
+  <div id="messages">
     <%= render partial: "messages/message", collection: @chat.messages %>
   </div>
 </div>
