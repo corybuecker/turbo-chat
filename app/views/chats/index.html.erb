@@ -1,0 +1,7 @@
+<%= button_to 'New Chat', chats_path, method: :post, data: {turbo:false} %>
+<% @chats.each do |chat| %>
+    <div >
+      <%= link_to(chat.title || "Chat #{chat.id}", chat) %>
+    </div>
+  </div>
+<% end %>

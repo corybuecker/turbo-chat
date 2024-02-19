@@ -1,24 +1,7 @@
-# README
+Fun proof of concept to stream ChatGPT conversation chunks back to the client through Turbo Streams.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ensure that PostgreSQL and Redis are running.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+/bin/setup
+```

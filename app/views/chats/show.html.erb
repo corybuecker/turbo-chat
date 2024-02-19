@@ -1,0 +1,11 @@
+<%= turbo_stream_from @chat, :messages %>
+<div>
+  <div>
+    <%= @chat.title %></div>
+  <p>There are
+    <%= @chat.messages.count %>
+    messages in this chat</p>
+  <div id="<%= dom_id(@chat) %>">
+    <%= render partial: "messages/message", collection: @chat.messages %>
+  </div>
+</div>

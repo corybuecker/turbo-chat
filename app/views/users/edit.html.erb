@@ -1,0 +1,5 @@
+<%= form_with model: @user do |f| %>
+  <%= f.label :chat_gpt_key, "ChatGPT key" %>
+  <%= f.text_field :chat_gpt_key %>
+  <%= f.submit %>
+<% end %>
