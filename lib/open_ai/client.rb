@@ -57,7 +57,7 @@ module OpenAi
     end
 
     def body
-      { stream: true, model: "gpt-4-turbo-preview", messages: [{ role: "system", content: "You are a helpful assistant." }, { role: "user", content: "What is the meaning of life?" }] }
+      { stream: true, model: "gpt-4-turbo-preview", messages: chat.messages.map(&:body) }
     end
 
     def headers

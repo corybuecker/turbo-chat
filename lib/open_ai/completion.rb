@@ -11,15 +11,13 @@ module OpenAi
     end
 
     def ask
-      message = chat.messages.last || chat.messages.new(body: { content: "" })
+      message = chat.messages.new(body: { content: "", role: "user" })
 
-      if message.new_record?
-        message.save
-        chat.broadcast_append_to chat, :messages, target: "messages", partial: "messages/message", locals: { message: message }
-      end
+      message.save
+      chat.broadcast_append_to chat, :messages, target: "messages", partial: "messages/message", locals: { message: message }
 
       Client.new(api_key, chat).completion do |response|
-        message.body = { content: message.body["content"] + response }
+        message.body = { role: "system", content: message.body["content"] + response }
         message.save
         message.broadcast_update_later_to chat, :messages, partial: "messages/message", locals: { message: message }
       end
