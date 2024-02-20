@@ -1,3 +1,6 @@
 <%= form_with model: @chat do |f| %>
+  <%= f.fields_for @chat.messages.build do |m| %>
+    <%= m.text_area :body, placeholder: "Enter your initial prompt" %>
+  <% end %>
   <%= f.submit "Start chat" %>
 <% end %>

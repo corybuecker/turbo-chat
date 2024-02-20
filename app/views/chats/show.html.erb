@@ -8,4 +8,11 @@
   <div id="messages">
     <%= render partial: "messages/message", collection: @chat.messages %>
   </div>
+
+  <div>
+    <%= form_with model: [@chat, @chat.messages.build] do |form| %>
+      <%= form.text_area :content %>
+      <%= form.submit %>
+    <% end %>
+  </div>
 </div>

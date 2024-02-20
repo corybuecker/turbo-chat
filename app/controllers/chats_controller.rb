@@ -9,8 +9,7 @@ class ChatsController < AuthenticatedController
 
   def create
     if chat = current_user.chats.create
-      chat.messages.create!(body: { role: "system", content: "You are an assistant" })
-      chat.messages.create!(body: { role: "user", content: "What is Ruby on Rails?" })
+      chat.messages.create!(body: { role: "system", content: params.require(:chat).require(:message).permit(:body)[:body] })
 
       GenerateCompletionJob.perform_later(chat.id)
       redirect_to chat_path(chat)
