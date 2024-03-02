@@ -184,7 +184,7 @@ GEM
       actionpack (>= 4.2)
       omniauth (~> 2.0)
     parallel (1.24.0)
-    pg (1.5.5)
+    pg (1.5.6)
     prettier_print (1.2.1)
     prism (0.24.0)
     psych (5.1.2)
