@@ -5,7 +5,7 @@ class AuthenticatedController < ApplicationController
 
   def require_user
     if !current_user
-      redirect_to login_path
+      redirect_to new_login_path
     end
   end
 
