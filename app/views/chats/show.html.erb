@@ -1,11 +1,12 @@
 <%= turbo_stream_from @chat, :messages %>
-<div>
+<div class="flex flex-col items-center">
   <div>
-    <%= @chat.title %></div>
+    <%= @chat.title %>
+  </div>
   <p>There are
     <%= @chat.messages.count %>
     messages in this chat</p>
-  <div id="messages">
+  <div id="messages" class="flex flex-col gap-3 max-w-prose">
     <%= render partial: "messages/message", collection: @chat.messages %>
   </div>
 

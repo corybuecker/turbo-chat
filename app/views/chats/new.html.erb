@@ -1,6 +1,10 @@
-<%= form_with model: @chat do |f| %>
-  <%= f.fields_for @chat.messages.build do |m| %>
-    <%= m.text_area :body, placeholder: "Enter your initial prompt" %>
+<div class="flex justify-center pt-4">
+  <%= form_with model: @chat do |f| %>
+    <%= f.fields_for @chat.messages.build do |m| %>
+      <%= m.text_area :body, placeholder: "Enter your initial prompt", rows: 16, cols: 96 %>
+    <% end %>
+    <div>
+      <%= submit("Start chat") %>
+    </div>
   <% end %>
-  <%= f.submit "Start chat" %>
-<% end %>
+</div>

@@ -1,1 +1,3 @@
-<div id="<%= dom_id(message) %>"><%= markdown_to_html(message.body["content"]) %></div>
+<div id="<%= dom_id(message) %>">
+  <%= markdown_to_html(message.body["content"]) %>
+</div>
