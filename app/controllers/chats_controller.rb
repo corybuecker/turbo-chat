@@ -22,4 +22,10 @@ class ChatsController < AuthenticatedController
   def show
     @chat = Chat.find(params[:id])
   end
+
+  def destroy
+    Chat.find(params[:id]).destroy
+
+    redirect_to chats_path
+  end
 end

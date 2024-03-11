@@ -1,7 +1,9 @@
-<%= link_to 'New Chat', new_chat_path %>
+<%= link_to "New Chat", new_chat_path %>
 <% @chats.each do |chat| %>
-    <div >
-      <%= link_to(chat.title || "Chat #{chat.id}", chat) %>
-    </div>
+  <div>
+    <%= link_to(chat.title || "Chat #{chat.id}", chat) %>
+  </div>
+  <div>
+    <%= link_to "Delete", chat_path(chat), data: { turbo_method: :delete } %>
   </div>
 <% end %>
