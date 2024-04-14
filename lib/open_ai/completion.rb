@@ -1,4 +1,6 @@
-# typed: true
+# typed: strict
+# frozen_string_literal: true
+
 module OpenAi
   class Completion
     extend T::Sig
@@ -7,8 +9,10 @@ module OpenAi
 
     def initialize(chat)
       @chat = chat
-      @api_key = T.must(chat.user).chat_gpt_key
+      @api_key = T.let(T.must(T.must(chat.user).chat_gpt_key), String)
     end
+
+    sig { void }
 
     def ask
       message = chat.messages.new(body: { content: "", role: "user" })
@@ -25,6 +29,10 @@ module OpenAi
 
     private
 
-    attr_reader :chat, :api_key
+    sig { returns(Chat) }
+    attr_reader :chat
+
+    sig { returns(String) }
+    attr_reader :api_key
   end
 end
