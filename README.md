@@ -1,5 +1,7 @@
 # Turbo Chat
 
+![example workflow](https://github.com/corybuecker/turbo-chat/actions/workflows/ci.yml/badge.svg)
+
 Proof of concept, just for fun, to stream ChatGPT conversation chunks back to the client through Turbo Streams.
 
 1. Create a ChatGPT API key and fund the account with a few dollars
